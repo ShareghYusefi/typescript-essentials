@@ -1,0 +1,6 @@
+{
+  "compilerOptions": {
+    // We can specify the target Javascript version to compile our Typescript code into
+    "target": "es2024"
+  }
+}
