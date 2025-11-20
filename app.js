@@ -101,6 +101,17 @@ var Animal = /** @class */ (function (_super) {
         _this.age = ageProp;
         return _this;
     }
+    Object.defineProperty(Animal.prototype, "hasTail", {
+        // getter and setter methods for manipulating a private property
+        get: function () {
+            return this._hasTail;
+        },
+        set: function (value) {
+            this._hasTail = value;
+        },
+        enumerable: false,
+        configurable: true
+    });
     Animal.prototype.eat = function () {
         console.log("Cat is eating.");
         return;
@@ -114,6 +125,10 @@ var Animal = /** @class */ (function (_super) {
 // Creating an Animal instance
 var cat = new Animal("Cat", 4, true, true);
 console.log(cat.eat());
+console.log("Get Has tail? " + cat.hasTail);
+// Setting the hasTail value
+cat.hasTail = true;
+console.log("Set Has tail? " + cat.hasTail);
 var aligator = {
     name: "Aligator",
     age: 99,

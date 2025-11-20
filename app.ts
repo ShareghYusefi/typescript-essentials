@@ -114,7 +114,7 @@ class Animal extends Mammal implements IAnimal {
   public name: string;
   public age: number;
   // private: accessible only within the class
-  private hasTail: boolean;
+  private _hasTail: boolean;
 
   constructor(
     nameProp: string,
@@ -127,6 +127,15 @@ class Animal extends Mammal implements IAnimal {
 
     this.name = nameProp;
     this.age = ageProp;
+  }
+
+  // getter and setter methods for manipulating a private property
+  get hasTail(): boolean {
+    return this._hasTail;
+  }
+
+  set hasTail(value: boolean) {
+    this._hasTail = value;
   }
 
   eat(): void {
@@ -143,6 +152,10 @@ class Animal extends Mammal implements IAnimal {
 // Creating an Animal instance
 let cat = new Animal("Cat", 4, true, true);
 console.log(cat.eat());
+console.log("Get Has tail? " + cat.hasTail);
+// Setting the hasTail value
+cat.hasTail = true;
+console.log("Set Has tail? " + cat.hasTail);
 
 // What is an Interface?
 // An interface defines a custom data type. This can be used to type objects.
