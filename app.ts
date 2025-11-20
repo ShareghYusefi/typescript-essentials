@@ -91,7 +91,8 @@ console.log(person1);
 class Mammal {
   // properties
   hasHair: boolean;
-  isWarmBlooded: boolean;
+  // protected: accessible within a class and its subclasses
+  protected isWarmBlooded: boolean;
 
   constructor(hasHairProp: boolean, isWarmBloodedProp: boolean) {
     this.hasHair = hasHairProp;
@@ -106,8 +107,14 @@ class Mammal {
 
 // We can inherit from Mammal class via "extends" keyword
 class Animal extends Mammal implements IAnimal {
-  name: string;
-  age: number;
+  // What are access modifiers? (public, private, protected)
+  // These are used to control access to properties and methods.
+
+  // public: accessible within and outside of a class
+  public name: string;
+  public age: number;
+  // private: accessible only within the class
+  private hasTail: boolean;
 
   constructor(
     nameProp: string,
@@ -144,9 +151,9 @@ console.log(cat.eat());
 // An Animal should have the following properties and methods.
 interface IAnimal {
   name: string;
-  age: number;
+  // We can use ? to make a property optional.
+  age?: number;
   hasHair: boolean;
-  isWarmBlooded: boolean;
   eat(): void;
   sleep(): void;
 }
@@ -155,7 +162,6 @@ let aligator: IAnimal = {
   name: "Aligator",
   age: 99,
   hasHair: false,
-  isWarmBlooded: false,
   eat() {
     console.log("Aligator eating.");
   },

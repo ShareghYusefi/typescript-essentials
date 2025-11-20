@@ -118,7 +118,6 @@ var aligator = {
     name: "Aligator",
     age: 99,
     hasHair: false,
-    isWarmBlooded: false,
     eat: function () {
         console.log("Aligator eating.");
     },
