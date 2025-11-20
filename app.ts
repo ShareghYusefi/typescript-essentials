@@ -131,3 +131,28 @@ class Animal extends Mammal {
 // Creating an Animal instance
 let cat = new Animal("Cat", 4, true, true);
 console.log(cat.eat());
+
+// What is an Interface?
+// An interface defines a custom data type. This can be used to type objects.
+
+// Interface for Animal Object
+// An Animal should have the following properties and methods.
+interface IAnimal {
+  name: string;
+  age: number;
+  hasHair: boolean;
+  isWarmBlooded: boolean;
+  eat(): void;
+}
+
+let aligator: IAnimal = {
+  name: "Aligator",
+  age: 99,
+  hasHair: false,
+  isWarmBlooded: false,
+  eat() {
+    console.log("Aligator eating.");
+  },
+};
+
+let dog: IAnimal = new Animal("Dog", 5, true, true);

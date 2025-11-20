@@ -110,3 +110,13 @@ var Animal = /** @class */ (function (_super) {
 // Creating an Animal instance
 var cat = new Animal("Cat", 4, true, true);
 console.log(cat.eat());
+var aligator = {
+    name: "Aligator",
+    age: 99,
+    hasHair: false,
+    isWarmBlooded: false,
+    eat: function () {
+        console.log("Aligator eating.");
+    },
+};
+var dog = new Animal("Dog", 5, true, true);
