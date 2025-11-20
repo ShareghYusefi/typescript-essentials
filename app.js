@@ -105,6 +105,10 @@ var Animal = /** @class */ (function (_super) {
         console.log("Cat is eating.");
         return;
     };
+    Animal.prototype.sleep = function () {
+        console.log("Cat is sleeping.");
+        return;
+    };
     return Animal;
 }(Mammal));
 // Creating an Animal instance
@@ -117,6 +121,9 @@ var aligator = {
     isWarmBlooded: false,
     eat: function () {
         console.log("Aligator eating.");
+    },
+    sleep: function () {
+        console.log("Aligator sleeping.");
     },
 };
 var dog = new Animal("Dog", 5, true, true);

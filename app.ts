@@ -105,7 +105,7 @@ class Mammal {
 }
 
 // We can inherit from Mammal class via "extends" keyword
-class Animal extends Mammal {
+class Animal extends Mammal implements IAnimal {
   name: string;
   age: number;
 
@@ -126,6 +126,11 @@ class Animal extends Mammal {
     console.log("Cat is eating.");
     return;
   }
+
+  sleep(): void {
+    console.log("Cat is sleeping.");
+    return;
+  }
 }
 
 // Creating an Animal instance
@@ -143,6 +148,7 @@ interface IAnimal {
   hasHair: boolean;
   isWarmBlooded: boolean;
   eat(): void;
+  sleep(): void;
 }
 
 let aligator: IAnimal = {
@@ -152,6 +158,9 @@ let aligator: IAnimal = {
   isWarmBlooded: false,
   eat() {
     console.log("Aligator eating.");
+  },
+  sleep() {
+    console.log("Aligator sleeping.");
   },
 };
 
