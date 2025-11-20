@@ -141,3 +141,9 @@ var aligator = {
     },
 };
 var dog = new Animal("Dog", 5, true, true);
+// Type Assertion
+// We can tell the compiler what our variable data type is explicity
+var message = "Lorem ipsum";
+// We can use angle brackets to tell the compiler our variable type, giving us access to related functions
+var messageLength = message.length;
+var alternativeMessageLength = message.length;

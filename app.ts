@@ -184,3 +184,10 @@ let aligator: IAnimal = {
 };
 
 let dog: IAnimal = new Animal("Dog", 5, true, true);
+
+// Type Assertion
+// We can tell the compiler what our variable data type is explicity
+let message: unknown = "Lorem ipsum";
+// We can use angle brackets to tell the compiler our variable type, giving us access to related functions
+let messageLength = (<string>message).length;
+let alternativeMessageLength = (message as string).length;
