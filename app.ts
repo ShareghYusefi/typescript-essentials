@@ -84,3 +84,50 @@ class Person {
 let person1 = new Person("John", 78, true);
 
 console.log(person1);
+
+// What is inheritance?
+// When a class inherits properties and methods from another class.
+
+class Mammal {
+  // properties
+  hasHair: boolean;
+  isWarmBlooded: boolean;
+
+  constructor(hasHairProp: boolean, isWarmBloodedProp: boolean) {
+    this.hasHair = hasHairProp;
+    this.isWarmBlooded = isWarmBloodedProp;
+  }
+
+  eat(): void {
+    console.log("Mammal is eating.");
+    return;
+  }
+}
+
+// We can inherit from Mammal class via "extends" keyword
+class Animal extends Mammal {
+  name: string;
+  age: number;
+
+  constructor(
+    nameProp: string,
+    ageProp: number,
+    hasHairProp: boolean,
+    isWarmBloodedProp: boolean
+  ) {
+    // we can use "super" to call the parent class (Mammal) constructor
+    super(hasHairProp, isWarmBloodedProp);
+
+    this.name = nameProp;
+    this.age = ageProp;
+  }
+
+  eat(): void {
+    console.log("Cat is eating.");
+    return;
+  }
+}
+
+// Creating an Animal instance
+let cat = new Animal("Cat", 4, true, true);
+console.log(cat.eat());

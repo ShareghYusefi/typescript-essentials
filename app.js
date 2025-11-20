@@ -1,6 +1,21 @@
 // What is a Single Page Application (SPA)?
 // An application with one THML page, updated dynamically without refreshing the page.
 // Angular, Vue, React JS are all SPA frameworks.
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 // What is typescript?
 // It is a superset of javascript, used to build large application with data types.
 // Typescript is transpiled into javascript.
@@ -63,3 +78,35 @@ var Person = /** @class */ (function () {
 }());
 var person1 = new Person("John", 78, true);
 console.log(person1);
+// What is inheritance?
+// When a class inherits properties and methods from another class.
+var Mammal = /** @class */ (function () {
+    function Mammal(hasHairProp, isWarmBloodedProp) {
+        this.hasHair = hasHairProp;
+        this.isWarmBlooded = isWarmBloodedProp;
+    }
+    Mammal.prototype.eat = function () {
+        console.log("Mammal is eating.");
+        return;
+    };
+    return Mammal;
+}());
+// We can inherit from Mammal class via "extends" keyword
+var Animal = /** @class */ (function (_super) {
+    __extends(Animal, _super);
+    function Animal(nameProp, ageProp, hasHairProp, isWarmBloodedProp) {
+        // we can use "super" to call the parent class (Mammal) constructor
+        var _this = _super.call(this, hasHairProp, isWarmBloodedProp) || this;
+        _this.name = nameProp;
+        _this.age = ageProp;
+        return _this;
+    }
+    Animal.prototype.eat = function () {
+        console.log("Cat is eating.");
+        return;
+    };
+    return Animal;
+}(Mammal));
+// Creating an Animal instance
+var cat = new Animal("Cat", 4, true, true);
+console.log(cat.eat());
